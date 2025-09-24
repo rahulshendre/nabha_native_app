@@ -1,0 +1,34 @@
+[
+  {
+    "id": "asg-001",
+    "title": "Math Problem Set #5",
+    "subject": "Mathematics",
+    "dueDate": "2025-12-20T00:00:00.000Z",
+    "description": "Complete problems 1-10 from Chapter 3.",
+    "completed": false
+  },
+  {
+    "id": "asg-002",
+    "title": "Science Experiment Report",
+    "subject": "Science",
+    "dueDate": "2025-12-18T00:00:00.000Z",
+    "description": "Write a one-page report on plant growth.",
+    "completed": true
+  },
+  {
+    "id": "asg-003",
+    "title": "English Essay Writing",
+    "subject": "English",
+    "dueDate": "2025-12-22T00:00:00.000Z",
+    "description": "Write a 300-word essay on your favorite book.",
+    "completed": false
+  },
+  {
+    "id": "asg-004",
+    "title": "Computer Safety Poster",
+    "subject": "Computer Science",
+    "dueDate": "2025-12-27T00:00:00.000Z",
+    "description": "Create a poster about staying safe online.",
+    "completed": false
+  }
+]

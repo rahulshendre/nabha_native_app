@@ -1,37 +1,63 @@
-import React from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { View, Text, StyleSheet, ScrollView } from 'react-native';
+import { getAssignmentsV2, V2Assignment } from '../services/assignments.v2';
+import { getAnalytics } from '../services/analytics';
+import { useEffect as useReactEffect } from 'react';
+import { PerformanceBar } from '../components/charts/PerformanceBar';
+import { Link, useRouter } from 'expo-router';
+import { Button } from '../components/ui/Button';
+import { useI18n } from '../contexts/I18nContext';
+import { signOut } from '../services/auth';
 
 export default function TeacherDashboard() {
+  const [assignments, setAssignments] = useState<V2Assignment[]>([]);
+  useEffect(() => { getAssignmentsV2().then(setAssignments); }, []);
+  const summary = useMemo(() => ({
+    total: assignments.length,
+    completed: assignments.filter(a => a.completed).length,
+    pending: assignments.filter(a => !a.completed).length,
+  }), [assignments]);
+
+  const [analytics, setAnalytics] = React.useState<any | null>(null);
+  useEffect(() => { getAnalytics().then(setAnalytics); }, []);
+
+  const router = useRouter();
+  const { t } = useI18n();
+
   return (
     <ScrollView style={styles.container} contentContainerStyle={styles.content}>
-      <View style={styles.header}><Text style={styles.headerTitle}>Teacher Dashboard</Text></View>
+      <View style={styles.header}><Text style={styles.headerTitle}>{t('dashboard')}</Text></View>
 
-      <View style={styles.statsRow}>
+      <View style={{ flexDirection: 'row', gap: 8, marginBottom: 12 }}>
+        <Link href="/lessons" asChild>
+          <Button title={t('browseLessons')} accessibilityLabel={t('browseLessons')} />
+        </Link>
+        <Link href="/assignments" asChild>
+          <Button title={t('assignments')} accessibilityLabel={t('assignments')} />
+        </Link>
+        <Button title={t('logout')} accessibilityLabel={t('logout')} variant="outline" onPress={() => { signOut().then(() => router.replace('/')); }} />
+      </View>
+
+      <View className="stats" style={styles.statsRow}>
         <StatCard icon="👥" value="45" label="Students" />
         <StatCard icon="📚" value="8" label="Subjects" />
-        <StatCard icon="📈" value="92%" label="Avg. Performance" />
-        <StatCard icon="🗓️" value="88%" label="Attendance" />
+        <StatCard icon="📝" value={`${summary.pending}`} label="Assignments Pending" />
+        <StatCard icon="✅" value={`${summary.completed}`} label="Assignments Completed" />
       </View>
 
       <Section title="Student Performance Analytics">
-        <View style={styles.chartsRow}>
-          <View style={styles.chartBox}><Text style={styles.chartTitle}>Performance (placeholder)</Text></View>
-          <View style={styles.chartBox}><Text style={styles.chartTitle}>Attendance (placeholder)</Text></View>
-        </View>
+        {analytics ? (
+          <View style={styles.chartsRow}>
+            <View style={styles.chartBox}><PerformanceBar data={analytics.performance} /></View>
+            <View style={styles.chartBox}><Text style={styles.chartTitle}>Attendance %: {Math.round((analytics.attendance.filter((a: any) => a.present).length / analytics.attendance.length) * 100)}%</Text></View>
+          </View>
+        ) : null}
       </Section>
 
       <Section title="Class Overview" actionLabel="Manage Classes">
         <View style={{ gap: 10 }}>
           <ClassItem name="Class 8A - Mathematics" info="25 students • Morning Session" score="85%" present="22" />
           <ClassItem name="Class 8B - Science" info="20 students • Afternoon Session" score="78%" present="18" />
-        </View>
-      </Section>
-
-      <Section title="Top Performing Students" actionLabel="View All">
-        <View style={{ gap: 10 }}>
-          <StudentItem name="Priya Sharma" klass="Class 8A" score="95%" trend="up" />
-          <StudentItem name="Aman Singh" klass="Class 8A" score="92%" trend="up" />
-          <StudentItem name="Kavya Patel" klass="Class 8B" score="89%" trend="stable" />
         </View>
       </Section>
 
@@ -42,11 +68,9 @@ export default function TeacherDashboard() {
         </View>
       </Section>
 
-      <Section title="Recent Activity">
-        <View style={{ gap: 10 }}>
-          <ActivityItem text="Priya Sharma completed Math Assignment #5" time="2 hours ago" />
-          <ActivityItem text="Aman Singh asked a question about Science" time="4 hours ago" />
-          <ActivityItem text={'You uploaded new lesson: "Photosynthesis Process"'} time="1 day ago" />
+      <Section title="Assignments" actionLabel="Create New (coming soon)">
+        <View style={{ gap: 8 }}>
+          <Text style={{ color: '#6B7280' }}>Total: {summary.total} • Pending: {summary.pending} • Completed: {summary.completed}</Text>
         </View>
       </Section>
     </ScrollView>
@@ -180,5 +204,3 @@ const styles = StyleSheet.create({
   activityText: { color: '#374151' },
   activityTime: { color: '#9CA3AF', fontSize: 12 },
 });
-
-

@@ -1,0 +1,251 @@
+[
+  {
+    "id": "lesson-001",
+    "title": {
+      "en": "Computer Basics",
+      "hi": "कम्प्यूटर मूल बातें",
+      "pa": "ਕੰਪਿਊਟਰ ਬੁਨਿਆਦੀਆਂ"
+    },
+    "description": {
+      "en": "Intro to computers",
+      "hi": "कंप्यूटर का परिचय",
+      "pa": "ਕੰਪਿਊਟਰ ਦਾ ਪਰਿਚਯ"
+    },
+    "subject": "Computer Science",
+    "difficulty": "Beginner",
+    "offlineAvailable": true,
+    "contents": [
+      {
+        "type": "text",
+        "body": {
+          "en": "What is a computer?",
+          "hi": "कंप्यूटर क्या है?",
+          "pa": "ਕੰਪਿਊਟਰ ਕੀ ਹੈ?"
+        }
+      },
+      { "type": "image", "uri": "/assets/lessons/comp-1.png" }
+    ]
+  },
+  {
+    "id": "lesson-002",
+    "title": {
+      "en": "Introduction to Algebra",
+      "hi": "बीजगणित का परिचय",
+      "pa": "ਬੀਜਗਣਿਤ ਦਾ ਪਰਿਚਯ"
+    },
+    "description": {
+      "en": "Variables and expressions",
+      "hi": "चर और व्यंजक",
+      "pa": "ਚਰ ਅਤੇ ਅਭਿਵਿਅੰਜਨ"
+    },
+    "subject": "Mathematics",
+    "difficulty": "Beginner",
+    "offlineAvailable": true,
+    "contents": [
+      {
+        "type": "text",
+        "body": { "en": "x + 2 = 5", "hi": "x + 2 = 5", "pa": "x + 2 = 5" }
+      }
+    ]
+  },
+  {
+    "id": "lesson-003",
+    "title": { "en": "Fractions", "hi": "भिन्न", "pa": "ਅੰਸ਼" },
+    "description": {
+      "en": "Understanding fractions",
+      "hi": "भिन्न को समझना",
+      "pa": "ਅੰਸ਼ ਸਮਝਣਾ"
+    },
+    "subject": "Mathematics",
+    "difficulty": "Beginner",
+    "offlineAvailable": true,
+    "contents": [
+      {
+        "type": "text",
+        "body": { "en": "1/2 + 1/3", "hi": "1/2 + 1/3", "pa": "1/2 + 1/3" }
+      }
+    ]
+  },
+  {
+    "id": "lesson-004",
+    "title": {
+      "en": "Photosynthesis",
+      "hi": "प्रकाश संश्लेषण",
+      "pa": "ਪੋਸ਼ਣ ਸੰਸ਼ਲੇਸ਼ਣ"
+    },
+    "description": {
+      "en": "How plants make food",
+      "hi": "पौधे भोजन कैसे बनाते हैं",
+      "pa": "ਪੌਦੇ ਖਾਣਾ ਕਿਵੇਂ ਬਨਾਉਂਦੇ ਹਨ"
+    },
+    "subject": "Science",
+    "difficulty": "Beginner",
+    "offlineAvailable": true,
+    "contents": [
+      {
+        "type": "text",
+        "body": {
+          "en": "Sunlight + CO2 + Water",
+          "hi": "धूप + CO2 + पानी",
+          "pa": "ਧੁੱਪ + CO2 + ਪਾਣੀ"
+        }
+      }
+    ]
+  },
+  {
+    "id": "lesson-005",
+    "title": {
+      "en": "Human Digestive System",
+      "hi": "मानव पाचन तंत्र",
+      "pa": "ਮਨੁੱਖੀ ਪਚਨ ਤੰਤਰ"
+    },
+    "description": {
+      "en": "Organs and process",
+      "hi": "अंग और प्रक्रिया",
+      "pa": "ਅੰਗ ਅਤੇ ਪ੍ਰਕਿਰਿਆ"
+    },
+    "subject": "Science",
+    "difficulty": "Beginner",
+    "offlineAvailable": true,
+    "contents": [
+      {
+        "type": "text",
+        "body": {
+          "en": "Mouth to intestines",
+          "hi": "मुख से आंतों तक",
+          "pa": "ਮੂੰਹ ਤੋਂ ਆੱੰਤਾਂ ਤੱਕ"
+        }
+      }
+    ]
+  },
+  {
+    "id": "lesson-006",
+    "title": {
+      "en": "Basic English Grammar",
+      "hi": "मूल अंग्रेज़ी व्याकरण",
+      "pa": "ਮੂਲ ਅੰਗਰੇਜ਼ੀ ਵਿਆਕਰਣ"
+    },
+    "description": {
+      "en": "Nouns, verbs, adjectives",
+      "hi": "संज्ञा, क्रिया, विशेषण",
+      "pa": "ਸੰਗਿਆ, ਕਿਰਿਆ, ਵਿਸ਼ੇਸ਼ਣ"
+    },
+    "subject": "English",
+    "difficulty": "Beginner",
+    "offlineAvailable": true,
+    "contents": [
+      {
+        "type": "text",
+        "body": {
+          "en": "Simple sentences",
+          "hi": "सरल वाक्य",
+          "pa": "ਸਾਦੇ ਵਾਕ"
+        }
+      }
+    ]
+  },
+  {
+    "id": "lesson-007",
+    "title": {
+      "en": "Reading Comprehension",
+      "hi": "पठन समझ",
+      "pa": "ਪਾਠ ਸਮਝ"
+    },
+    "description": {
+      "en": "Short passage practice",
+      "hi": "लघु अनुच्छेद अभ्यास",
+      "pa": "ਛੋਟਾ ਅਨੁਛੇਦ ਅਭਿਆਸ"
+    },
+    "subject": "English",
+    "difficulty": "Beginner",
+    "offlineAvailable": true,
+    "contents": [
+      {
+        "type": "text",
+        "body": {
+          "en": "Read and answer",
+          "hi": "पढ़ें और उत्तर दें",
+          "pa": "ਪੜ੍ਹੋ ਅਤੇ ਜਵਾਬ ਦਿਓ"
+        }
+      }
+    ]
+  },
+  {
+    "id": "lesson-008",
+    "title": {
+      "en": "Computer Safety",
+      "hi": "कंप्यूटर सुरक्षा",
+      "pa": "ਕੰਪਿਊਟਰ ਸੁਰੱਖਿਆ"
+    },
+    "description": {
+      "en": "Using devices safely",
+      "hi": "उपकरणों का सुरक्षित उपयोग",
+      "pa": "ਉਪਕਰਣਾਂ ਦੀ ਸੁਰੱਖਿਅਤ ਵਰਤੋਂ"
+    },
+    "subject": "Computer Science",
+    "difficulty": "Beginner",
+    "offlineAvailable": true,
+    "contents": [
+      {
+        "type": "text",
+        "body": {
+          "en": "Don’t share passwords",
+          "hi": "पासवर्ड साझा न करें",
+          "pa": "ਪਾਸਵਰਡ ਨਾ ਸਾਂਝੇ ਕਰੋ"
+        }
+      }
+    ]
+  },
+  {
+    "id": "lesson-009",
+    "title": {
+      "en": "Internet Basics",
+      "hi": "इंटरनेट की मूल बातें",
+      "pa": "ਇੰਟਰਨੈੱਟ ਬੁਨਿਆਦੀਆਂ"
+    },
+    "description": {
+      "en": "What is the internet?",
+      "hi": "इंटरनेट क्या है?",
+      "pa": "ਇੰਟਰਨੈੱਟ ਕੀ ਹੈ?"
+    },
+    "subject": "Computer Science",
+    "difficulty": "Beginner",
+    "offlineAvailable": true,
+    "contents": [
+      {
+        "type": "text",
+        "body": {
+          "en": "Web, email, search",
+          "hi": "वेब, ईमेल, खोज",
+          "pa": "ਵੈੱਬ, ਈਮੇਲ, ਖੋਜ"
+        }
+      }
+    ]
+  },
+  {
+    "id": "lesson-010",
+    "title": {
+      "en": "Geometry Basics",
+      "hi": "ज्यामिति की मूल बातें",
+      "pa": "ਜਯਾਮਿਤੀ ਬੁਨਿਆਦੀਆਂ"
+    },
+    "description": {
+      "en": "Lines and angles",
+      "hi": "रेखाएँ और कोण",
+      "pa": "ਰੇਖਾਵਾਂ ਅਤੇ ਕੋਣ"
+    },
+    "subject": "Mathematics",
+    "difficulty": "Beginner",
+    "offlineAvailable": true,
+    "contents": [
+      {
+        "type": "text",
+        "body": {
+          "en": "Types of angles",
+          "hi": "कोणों के प्रकार",
+          "pa": "ਕੋਣਾਂ ਦੇ ਕਿਸਮਾਂ"
+        }
+      }
+    ]
+  }
+]

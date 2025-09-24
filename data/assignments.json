@@ -1,0 +1,44 @@
+[
+  {
+    "id": "a-001",
+    "title": "Math Problem Set #5",
+    "subject": "Mathematics",
+    "dueDate": "2025-12-20T00:00:00.000Z",
+    "status": "pending"
+  },
+  {
+    "id": "a-002",
+    "title": "Science Experiment Report",
+    "subject": "Science",
+    "dueDate": "2025-12-18T00:00:00.000Z",
+    "status": "completed"
+  },
+  {
+    "id": "a-003",
+    "title": "English Essay Writing",
+    "subject": "English",
+    "dueDate": "2025-12-22T00:00:00.000Z",
+    "status": "pending"
+  },
+  {
+    "id": "a-004",
+    "title": "Geometry Worksheet",
+    "subject": "Mathematics",
+    "dueDate": "2025-12-25T00:00:00.000Z",
+    "status": "pending"
+  },
+  {
+    "id": "a-005",
+    "title": "Reading Comprehension Quiz",
+    "subject": "English",
+    "dueDate": "2025-12-19T00:00:00.000Z",
+    "status": "completed"
+  },
+  {
+    "id": "a-006",
+    "title": "Computer Safety Poster",
+    "subject": "Computer Science",
+    "dueDate": "2025-12-27T00:00:00.000Z",
+    "status": "pending"
+  }
+]

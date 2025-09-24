@@ -1,0 +1,102 @@
+[
+  {
+    "id": "v2-lesson-001",
+    "title": "Computer Basics",
+    "description": "Introduction to computers and their uses",
+    "difficulty": "Beginner",
+    "offlineAvailable": true,
+    "contents": [
+      {
+        "type": "text",
+        "body": "A computer is an electronic device that processes data to produce information."
+      },
+      { "type": "image", "body": "", "imageUri": "/assets/lessons/comp-1.png" },
+      {
+        "type": "quiz",
+        "body": "Which of these is an input device?",
+        "quiz": [
+          {
+            "question": "Pick input device",
+            "options": ["Monitor", "Keyboard", "Printer", "Speaker"],
+            "correctAnswer": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "v2-lesson-002",
+    "title": "Introduction to Algebra",
+    "description": "Basics of variables and simple equations",
+    "difficulty": "Beginner",
+    "offlineAvailable": true,
+    "contents": [
+      {
+        "type": "text",
+        "body": "A variable is a symbol (like x) that stands for a number."
+      },
+      {
+        "type": "quiz",
+        "body": "Solve: x + 2 = 5. What is x?",
+        "quiz": [
+          {
+            "question": "x + 2 = 5",
+            "options": ["1", "2", "3", "4"],
+            "correctAnswer": 2
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "v2-lesson-003",
+    "title": "Photosynthesis",
+    "description": "How plants make their food",
+    "difficulty": "Beginner",
+    "offlineAvailable": true,
+    "contents": [
+      {
+        "type": "text",
+        "body": "Photosynthesis uses sunlight, carbon dioxide, and water to produce glucose and oxygen."
+      },
+      { "type": "image", "body": "", "imageUri": "/assets/lessons/photo-1.png" }
+    ]
+  },
+  {
+    "id": "v2-lesson-004",
+    "title": "Basic English Grammar",
+    "description": "Nouns, verbs, and adjectives",
+    "difficulty": "Beginner",
+    "offlineAvailable": true,
+    "contents": [
+      {
+        "type": "text",
+        "body": "A noun names a person, place, thing, or idea. A verb shows action."
+      },
+      {
+        "type": "quiz",
+        "body": "Identify the verb in the sentence: 'The boy runs fast.'",
+        "quiz": [
+          {
+            "question": "Verb in sentence",
+            "options": ["boy", "runs", "fast", "the"],
+            "correctAnswer": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "v2-lesson-005",
+    "title": "Geometry Basics",
+    "description": "Lines, angles, and shapes",
+    "difficulty": "Beginner",
+    "offlineAvailable": true,
+    "contents": [
+      {
+        "type": "text",
+        "body": "An acute angle is less than 90 degrees; a right angle is exactly 90 degrees."
+      }
+    ]
+  }
+]
