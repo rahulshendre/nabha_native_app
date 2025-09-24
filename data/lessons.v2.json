@@ -10,7 +10,7 @@
         "type": "text",
         "body": "A computer is an electronic device that processes data to produce information."
       },
-      { "type": "image", "body": "", "imageUri": "/assets/lessons/comp-1.png" },
+      { "type": "image", "body": "", "imageUri": "https://cdn.pixabay.com/photo/2014/04/02/10/47/computer-303800_960_720.png" },
       {
         "type": "quiz",
         "body": "Which of these is an input device?",
@@ -59,7 +59,7 @@
         "type": "text",
         "body": "Photosynthesis uses sunlight, carbon dioxide, and water to produce glucose and oxygen."
       },
-      { "type": "image", "body": "", "imageUri": "/assets/lessons/photo-1.png" }
+      { "type": "image", "body": "", "imageUri": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=600&q=80" }
     ]
   },
   {

@@ -21,8 +21,17 @@ export const LessonDetail: React.FC<{ lesson: V2Lesson; initialCompleted: boolea
           );
         }
         if (b.type === 'image') {
+          const src = (b as any).imageUri as string | undefined;
+          const isRemote = !!src && /^(https?:)?\/\//.test(src);
+          const isBundledAssetHint = !!src && src.startsWith('/assets/');
+          let imageSource: any = { uri: src || '' };
+          if (!isRemote || isBundledAssetHint) {
+            // Fallback to a bundled placeholder image to avoid Metro scanning missing folders
+            // eslint-disable-next-line @typescript-eslint/no-var-requires
+            imageSource = require('../../assets/images/partial-react-logo.png');
+          }
           return (
-            <Card key={idx} style={styles.block}><Image source={{ uri: (b as any).imageUri || '' }} style={styles.image} /></Card>
+            <Card key={idx} style={styles.block}><Image source={imageSource} style={styles.image} /></Card>
           );
         }
         if (b.type === 'quiz') {

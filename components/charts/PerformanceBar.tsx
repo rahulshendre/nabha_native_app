@@ -1,5 +1,6 @@
 import React from "react";
 import { View, Text } from "react-native";
+import { useTheme } from "../../contexts/ThemeContext";
 import { PerformancePt } from "../../services/analytics";
 
 export const PerformanceBar: React.FC<{ data: PerformancePt[]; width?: number; height?: number }> = ({ data, width = 320, height = 220 }) => {
@@ -11,10 +12,18 @@ export const PerformanceBar: React.FC<{ data: PerformancePt[]; width?: number; h
   } catch {}
 
   if (!Victory || !Victory.VictoryBar) {
-    // Fallback placeholder
+    const { colors } = useTheme();
+    // Fallback: simple horizontal bars
     return (
-      <View style={{ alignItems: "center", justifyContent: "center", height }}>
-        <Text>Chart unavailable</Text>
+      <View style={{ padding: 12, gap: 8 }}>
+        {data.map((d) => (
+          <View key={d.subject}>
+            <Text style={{ marginBottom: 4 }}>{d.subject}</Text>
+            <View style={{ height: 10, backgroundColor: colors.border, borderRadius: 6, overflow: 'hidden' }}>
+              <View style={{ width: `${Math.max(0, Math.min(100, d.score))}%`, backgroundColor: colors.accent, height: '100%' }} />
+            </View>
+          </View>
+        ))}
       </View>
     );
   }

@@ -4,10 +4,41 @@ import { View, Text, StyleSheet } from "react-native";
 import { useI18n } from "../contexts/I18nContext";
 import { Button } from "../components/ui/Button";
 import { LanguageSwitcher } from "../components/LanguageSwitcher";
-import { colors } from "../theme/colors";
+import { useTheme } from "../contexts/ThemeContext";
 
 export default function HomeScreen() {
   const { t } = useI18n();
+  const { colors } = useTheme();
+
+  const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      backgroundColor: colors.bg,
+      padding: 24,
+      justifyContent: "center",
+    },
+    title: {
+      fontSize: 30,
+      fontWeight: "800",
+      color: colors.primary,
+      marginBottom: 8,
+      textAlign: "center",
+      letterSpacing: 0.3,
+    },
+    subtitle: {
+      fontSize: 16,
+      color: colors.muted,
+      textAlign: "center",
+      marginBottom: 28,
+    },
+    buttons: {
+      flexDirection: "row",
+      gap: 12,
+      justifyContent: "center",
+      marginBottom: 28,
+      flexWrap: "wrap",
+    },
+  });
 
   return (
     <View style={styles.container}>
@@ -28,10 +59,10 @@ export default function HomeScreen() {
             accessibilityLabel={t("teacherLogin")}
           />
         </Link>
-        <Link href="/lessons" asChild>
+        <Link href="/learn" asChild>
           <Button
-            title={t("browseLessons")}
-            accessibilityLabel={t("browseLessons")}
+            title={t("learn") || "Learn"}
+            accessibilityLabel={t("learn") || "Learn"}
           />
         </Link>
       </View>
@@ -40,31 +71,3 @@ export default function HomeScreen() {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: colors.bg,
-    padding: 24,
-    justifyContent: "center",
-  },
-  title: {
-    fontSize: 28,
-    fontWeight: "700",
-    color: colors.primary,
-    marginBottom: 12,
-    textAlign: "center",
-  },
-  subtitle: {
-    fontSize: 16,
-    color: colors.muted,
-    textAlign: "center",
-    marginBottom: 24,
-  },
-  buttons: {
-    flexDirection: "row",
-    gap: 12,
-    justifyContent: "center",
-    marginBottom: 24,
-  },
-});

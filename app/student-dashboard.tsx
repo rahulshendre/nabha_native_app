@@ -1,7 +1,6 @@
 import React from "react";
 import { View, Text, StyleSheet, ScrollView, TouchableOpacity } from "react-native";
 import { StatsHeader } from "../components/Student/StatsHeader";
-import { AssignmentsBlock } from "../components/Student/AssignmentsBlock";
 import { AnalyticsBlock } from "../components/Student/AnalyticsBlock";
 import { useI18n } from "../contexts/I18nContext";
 import { Link } from "expo-router";
@@ -55,7 +54,6 @@ export default function StudentDashboard() {
         </View>
       </View>
 
-      <AssignmentsBlock />
 
       <AnalyticsBlock />
 

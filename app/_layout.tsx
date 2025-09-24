@@ -20,6 +20,7 @@ export default function RootLayout() {
         <I18nProvider>
           <Stack>
             <Stack.Screen name="index" options={{ headerShown: false }} />
+            <Stack.Screen name="learn" options={{ title: "Learn" }} />
             <Stack.Screen
               name="student-login"
               options={{ title: "Student Login" }}

@@ -1,6 +1,7 @@
 import React from "react";
 import { View, Text } from "react-native";
 import { AttendancePt } from "../../services/analytics";
+import { useTheme } from "../../contexts/ThemeContext";
 
 export const AttendanceLine: React.FC<{ data: AttendancePt[]; width?: number; height?: number }> = ({ data, width = 320, height = 220 }) => {
   let Victory: any = null;
@@ -10,9 +11,23 @@ export const AttendanceLine: React.FC<{ data: AttendancePt[]; width?: number; he
   } catch {}
 
   if (!Victory || !Victory.VictoryLine) {
+    const { colors } = useTheme();
+    // Simple fallback: dots timeline for presence
     return (
-      <View style={{ alignItems: "center", justifyContent: "center", height }}>
-        <Text>Chart unavailable</Text>
+      <View style={{ paddingVertical: 12, paddingHorizontal: 8 }}>
+        <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 8 }}>
+          {data.map((d, idx) => (
+            <View
+              key={`${d.date}-${idx}`}
+              style={{
+                width: 14,
+                height: 14,
+                borderRadius: 7,
+                backgroundColor: d.present ? colors.success : colors.border,
+              }}
+            />
+          ))}
+        </View>
       </View>
     );
   }
