@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, TextInput, StyleSheet } from 'react-native';
 import { useRouter } from 'expo-router';
+import { Button } from '../components/ui/Button';
+import { colors } from '../theme/colors';
+import { signIn } from '../services/auth';
 
 export default function TeacherLoginScreen() {
   const router = useRouter();
@@ -9,8 +12,6 @@ export default function TeacherLoginScreen() {
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState<{ type: 'error' | 'success'; text: string } | null>(null);
 
-  const demo = { username: 'teacher123', password: 'password123' };
-
   function handleSubmit() {
     setMessage(null);
     if (!username || !password) {
@@ -18,15 +19,16 @@ export default function TeacherLoginScreen() {
       return;
     }
     setLoading(true);
-    setTimeout(() => {
-      if (username === demo.username && password === demo.password) {
+    signIn(username, password)
+      .then((u) => {
+        if (u.role !== 'teacher') throw new Error('Please use a teacher account');
         setMessage({ type: 'success', text: 'Login successful! Redirecting to dashboard...' });
-        setTimeout(() => router.replace('/teacher-dashboard'), 1000);
-      } else {
-        setMessage({ type: 'error', text: 'Invalid username or password. Please try again.' });
+        setTimeout(() => router.replace('/teacher-dashboard'), 600);
+      })
+      .catch((e) => {
+        setMessage({ type: 'error', text: e.message || 'Login failed' });
         setLoading(false);
-      }
-    }, 800);
+      });
   }
 
   return (
@@ -69,27 +71,23 @@ export default function TeacherLoginScreen() {
           />
         </View>
 
-        <TouchableOpacity style={styles.button} onPress={handleSubmit} disabled={loading}>
-          <Text style={styles.buttonText}>{loading ? 'Logging in...' : 'Login to Dashboard'}</Text>
-        </TouchableOpacity>
+        <Button title={loading ? 'Logging in...' : 'Login to Dashboard'} onPress={handleSubmit} disabled={loading} accessibilityLabel="Teacher login" />
       </View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: '#1E3A8A', justifyContent: 'center', padding: 16 },
-  card: { backgroundColor: 'white', borderRadius: 16, padding: 20 },
-  title: { fontSize: 24, fontWeight: '700', color: '#1E3A8A', marginBottom: 4 },
-  subtitle: { color: '#6B7280', marginBottom: 16 },
+  container: { flex: 1, backgroundColor: colors.primary, justifyContent: 'center', padding: 16 },
+  card: { backgroundColor: colors.card, borderRadius: 16, padding: 20 },
+  title: { fontSize: 24, fontWeight: '700', color: colors.primary, marginBottom: 4 },
+  subtitle: { color: colors.muted, marginBottom: 16 },
   demo: { backgroundColor: '#F3F4F6', padding: 12, borderRadius: 8, marginBottom: 12 },
-  demoTitle: { color: '#1E3A8A', fontWeight: '600', marginBottom: 4 },
-  demoText: { color: '#4B5563', fontSize: 12 },
+  demoTitle: { color: colors.primary, fontWeight: '600', marginBottom: 4 },
+  demoText: { color: colors.muted, fontSize: 12 },
   field: { marginBottom: 12 },
   label: { color: '#374151', marginBottom: 6, fontWeight: '500' },
   input: { borderWidth: 2, borderColor: '#E5E7EB', borderRadius: 8, padding: 12 },
-  button: { backgroundColor: '#10B981', paddingVertical: 12, borderRadius: 8, alignItems: 'center' },
-  buttonText: { color: 'white', fontWeight: '600' },
   msg: { padding: 10, borderRadius: 6, marginBottom: 10 },
   msgError: { backgroundColor: '#FEE2E2', borderColor: '#FCA5A5', borderWidth: 1 },
   msgSuccess: { backgroundColor: '#D1FAE5', borderColor: '#A7F3D0', borderWidth: 1 },
